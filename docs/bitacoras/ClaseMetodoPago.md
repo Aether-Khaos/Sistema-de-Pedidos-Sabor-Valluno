@@ -1,4 +1,5 @@
 ### se hizo uso del readme Reglas junto al como se encuentra el diagrama UML 
+- Rosales Alex 
 - se tuvo que aclarar que debe revisar la estructura de archivos en el readme de la clase MetodoPago
 Jerarquía de Métodos de Pago
 MetodoPago (Clase Base / Superclase)
