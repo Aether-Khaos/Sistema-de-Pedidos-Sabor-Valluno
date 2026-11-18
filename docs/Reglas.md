@@ -685,3 +685,37 @@ Debe ejecutar las instrucciones del usuario respetando este documento, el diagra
 **Prioridad absoluta: fidelidad al diseño, cumplimiento de las reglas, código funcional, compatibilidad entre clases y mantenimiento sin romper funcionalidades existentes.**
 
 No agregar más de lo solicitado. No quitar lo que debe permanecer. No inventar lo que no está definido.
+### Estructura de carpetas a seguir explicitamente
+restaurante_app/
+│
+├── main.py                    # Punto de entrada de la aplicación / Orquestador
+│
+├── modelos/                   # Clases principales del dominio
+│   |
+│   ├── restaurante.py         # Clase Restaurante
+│   ├── cliente.py             # Clase Cliente
+│   └── producto.py            # Clase Producto
+│
+├── pedidos/                   # Módulo de gestión de pedidos y herencia
+│   |
+│   ├── pedido.py              # Superclase Pedido
+│   ├── pedido_local.py        # Hereda de Pedido
+│   ├── pedido_delivery.py     # Hereda de Pedido
+│   ├── pedido_para_llevar.py  # Hereda de PedidoDelivery
+│   └── detalle_pedido.py      # Clase DetallePedido
+│
+├── platos/                    # Módulo de platos / menú y herencia
+│   |
+│   ├── plato.py               # Superclase Plato
+│   ├── refresco_natural.py    # Hereda de Plato
+│   ├── bebida_preparada.py    # Hereda de Plato
+│   ├── gaseosa.py             # Hereda de Plato
+│   ├── combo.py               # Clase Combo
+│   └── producto_combo.py      # Clase ProductoCombo
+│
+└── pagos/                     # Módulo de pasarela de pagos y herencia
+    |
+    ├── metodo_pago.py         # Superclase MetodoPago
+    ├── pago_efectivo.py       # Hereda de MetodoPago
+    ├── pago_qr.py             # Hereda de MetodoPago
+    └── pago_tarjeta.py        # Hereda de MetodoPago
