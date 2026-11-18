@@ -1,7 +1,7 @@
 # Proyecto Integrador POO – Sistema de Pedidos Sabor Valluno
 ### Integrantes
 - Rosales Quispe Alex
-- user
+- Callisaya Huanca Isai
 - user
 
 
