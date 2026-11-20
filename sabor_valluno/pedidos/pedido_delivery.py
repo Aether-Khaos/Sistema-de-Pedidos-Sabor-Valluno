@@ -3,7 +3,6 @@ from .pedido import Pedido
 
 
 class PedidoDelivery(Pedido):
-    """Pedido a domicilio con tarifa por zona, mínimo, envío gratis y retraso."""
 
     _TARIFAS_ZONA = {
         "Cercado": 8.0,
@@ -11,8 +10,8 @@ class PedidoDelivery(Pedido):
         "Sacaba": 15.0,
         "Vinto": 20.0,
     }
-    _MONTO_ENVIO_GRATIS = 100.0   # Variante F: envío gratis desde Bs 100
-    _MINUTOS_MAXIMOS = 60         # más de 60 min => retraso
+    _MONTO_ENVIO_GRATIS = 100.0
+    _MINUTOS_MAXIMOS = 60
 
     def __init__(self, numero, cliente, zona, direccion,
                  pedido_minimo=30.0, fecha_registro=None):
@@ -26,7 +25,6 @@ class PedidoDelivery(Pedido):
         self.direccion = direccion
         self.pedido_minimo = pedido_minimo
 
-    # ---------- Propiedades ----------
     @property
     def zona(self):
         return self._zona
@@ -68,10 +66,8 @@ class PedidoDelivery(Pedido):
 
     @property
     def retraso(self):
-        # Solo lectura: se calcula al entregar el pedido.
         return self._retraso
 
-    # ---------- Reglas de negocio ----------
     def validar_pedido_minimo(self):
         if self.calcular_subtotal() >= self._pedido_minimo:
             return True
@@ -80,7 +76,7 @@ class PedidoDelivery(Pedido):
         )
 
     def calcular_cargos(self):
-        # Envío gratis por monto, o devolución del envío si hubo retraso.
+
         if self._retraso or self.calcular_subtotal() >= self._MONTO_ENVIO_GRATIS:
             return 0.0
         return self._TARIFAS_ZONA[self._zona]

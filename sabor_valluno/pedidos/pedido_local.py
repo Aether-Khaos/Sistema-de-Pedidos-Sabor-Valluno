@@ -2,7 +2,6 @@ from .pedido import Pedido
 
 
 class PedidoLocal(Pedido):
-    """Pedido consumido en el restaurante, asociado a una mesa."""
 
     def __init__(self, numero, cliente, numero_mesa, fecha_registro=None):
         super().__init__(numero, cliente, fecha_registro)

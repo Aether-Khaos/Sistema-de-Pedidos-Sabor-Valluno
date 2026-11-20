@@ -2,7 +2,6 @@ from .pedido import Pedido
 
 
 class PedidoParaLlevar(Pedido):
-    """Pedido para llevar: cobra envase por cada plato (Variante F)."""
 
     def __init__(self, numero, cliente, costo_envase=2.0, fecha_registro=None):
         super().__init__(numero, cliente, fecha_registro)
@@ -24,5 +23,4 @@ class PedidoParaLlevar(Pedido):
         self._costo_envase = round(float(valor), 2)
 
     def calcular_cargos(self):
-        # Bs 2.00 por plato (los platos de un combo también cuentan).
         return round(self.contar_platos() * self._costo_envase, 2)
