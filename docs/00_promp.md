@@ -1,0 +1,1 @@
+dame el codigo en python junto a sus bitacoras en .md muy aparte, debe cumplir estrictamente el modelo
