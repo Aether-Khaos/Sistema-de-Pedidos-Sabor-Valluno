@@ -2,7 +2,7 @@
 ### Integrantes
 - Rosales Quispe Alex
 - Callisaya Huanca Isai
-- user
+- Jhoel Cortez Jimenez 
 
 
 ## Reglas de Negocio y Variante Asignada
